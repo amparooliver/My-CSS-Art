@@ -1,0 +1,663 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.art-container {
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Cat in clouds */
+.cat-scene {
+    background-color: #4062AA;
+    position: relative;
+}
+
+.cloud-enhanced {
+    position: relative;
+    width: 25%;
+    height: 15%;
+    background-color: white;
+    border-radius: 50%;
+    top: 15%;
+    left: 60%;
+}
+
+/* Main cloud parts using pseudo-elements */
+.cloud-enhanced:before {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 70%;
+    background-color: white;
+    border-radius: 50%;
+    top: 60%;
+    left: 25%;
+    rotate: -45deg;
+}
+
+.cloud-enhanced:after {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 80%;
+    background-color: white;
+    border-radius: 50%;
+    top: -30%;
+    left: 70%;
+}
+
+/* Additional cloud parts using child elements */
+.cloud-enhanced .cloud-part {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.cloud-part-1 {
+    width: 45%;
+    height: 70%;
+    top: -20%;
+    left: 5%;
+}
+
+.cloud-part-2 {
+    width: 50%;
+    height: 65%;
+    top: 10%;
+    left: 45%;
+}
+
+.cloud-part-3 {
+    width: 40%;
+    height: 60%;
+    top: 30%;
+    left: 25%;
+}
+
+.cloud-part-4 {
+    width: 35%;
+    height: 55%;
+    top: 20%;
+    left: 70%;
+}
+
+.cloud-part-5 {
+    width: 30%;
+    height: 45%;
+    top: -10%;
+    left: 100%;
+}
+
+
+.cat {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 120px;
+    background-color: black;
+    border-radius: 40px;
+}
+
+.cat-head {
+    width: 70px;
+    height: 65px;
+    background-color: black;
+    border-radius: 35px 35px 30px 30px;
+    position: absolute;
+    top: -30px;
+    left: 5px;
+}
+
+.cat-ear {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 25px solid black;
+    top: -20px;
+}
+
+.cat-ear-left {
+    left: 10px;
+    transform: rotate(-30deg);
+}
+
+.cat-ear-right {
+    right: 10px;
+    transform: rotate(30deg);
+}
+
+.cat-eye {
+    position: absolute;
+    width: 12px;
+    height: 6px;
+    background-color: #fde802;
+    border-radius: 6px 6px 0 0;
+    top: 20px;
+}
+
+.cat-eye-left {
+    left: 15px;
+}
+
+.cat-eye-right {
+    right: 15px;
+}
+
+.cat-arm {
+    position: absolute;
+    width: 20px;
+    height: 50px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.cat-arm-left {
+    transform: rotate(20deg);
+    left: -10px;
+    top: 20px;
+}
+
+.cat-arm-right {
+    width: 18px;
+    height: 45px;
+    transform: rotate(-30deg);
+    right: 0;
+    top: 25px;
+}
+
+/* Crab */
+.crab-scene {
+    background-color: #C8E9F2;
+    position: relative;
+}
+
+.crab {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.crab-body {
+    width: 120px;
+    height: 80px;
+    background-color: #ff5733;
+    border-radius: 50%;
+    position: relative;
+}
+
+.crab-eye {
+    position: absolute;
+    width: 9%;
+    height: 14%;
+    background-color: black;
+    border-radius: 50%;
+    top: -25%;
+}
+
+.crab-eye-back {
+    position: absolute;
+    width: 15%;
+    height: 20%;
+    background-color: #ff5733;
+    border-radius: 50%;
+    top: -27%;
+}
+
+.crab-eye-b-left {
+    left: 30%;
+}
+
+.crab-eye-b-right {
+    right: 30%;
+}
+
+.crab-eye-left {
+    left: 40px;
+}
+
+.crab-eye-right {
+    right: 40px;
+}
+
+.crab-stem {
+    position: absolute;
+    width: 40px;
+    height: 6px;
+    background-color: #ff5733;
+}
+
+.crab-stem-1 {
+    left: 21%;
+    top: 5%;
+    transform: rotate(85deg);
+}
+.crab-stem-2 {
+    right: 21%;
+    top: 5%;
+    transform: rotate(95deg);
+}
+
+.crab-claw {
+    position: absolute;
+    background-color: #ff5733;
+}
+
+.crab-claw-left {
+    width: 30px;
+    height: 60px;
+    border-radius: 15px 0 0 15px;
+    left: -25px;
+    top: 10px;
+    clip-path: polygon(0 20%, 100% 0, 100% 40%, 0 60%, 0 100%, 100% 80%, 100% 100%, 0 80%);
+}
+
+.crab-claw-right {
+    width: 30px;
+    height: 60px;
+    border-radius: 0 15px 15px 0;
+    right: -25px;
+    top: 10px;
+    clip-path: polygon(100% 20%, 0 0, 0 40%, 100% 60%, 100% 100%, 0 80%, 0 100%, 100% 80%);
+}
+
+.crab-leg {
+    position: absolute;
+    width: 40px;
+    height: 6px;
+    background-color: #ff5733;
+}
+
+.crab-leg-1 {
+    left: -35px;
+    top: 40px;
+    transform: rotate(20deg);
+}
+
+.crab-leg-2 {
+    left: -30px;
+    top: 55px;
+    transform: rotate(10deg);
+}
+
+.crab-leg-3 {
+    left: -25px;
+    top: 70px;
+    transform: rotate(-10deg);
+}
+
+.crab-leg-4 {
+    right: -35px;
+    top: 40px;
+    transform: rotate(-20deg);
+}
+
+.crab-leg-5 {
+    right: -30px;
+    top: 55px;
+    transform: rotate(-10deg);
+}
+
+.crab-leg-6 {
+    right: -25px;
+    top: 70px;
+    transform: rotate(10deg);
+}
+
+.crab-smile {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    border-radius: 0 0 15px 15px;
+    border-bottom: 5px solid black;
+    left: 45%;
+    top: 20%;
+}
+
+/* Alligator */
+.alligator-scene {
+    background-color: #f0ece3;
+    position: relative;
+}
+
+.alligator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.alligator-body {
+    width: 250px;
+    height: 50px;
+    background-color: #2e7d32;
+    border-radius: 25px;
+    position: relative;
+}
+
+.alligator-head {
+    width: 120px;
+    height: 40px;
+    background-color: #2e7d32;
+    border-radius: 20px;
+    position: absolute;
+    left: -60px;
+    top: 5px;
+}
+
+.alligator-jaw {
+    width: 120px;
+    height: 30px;
+    background-color: #2e7d32;
+    border-radius: 15px;
+    position: absolute;
+    left: -60px;
+    top: 15px;
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+}
+
+.alligator-eye {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    top: 10px;
+}
+
+.alligator-eye-left {
+    left: 25px;
+}
+
+.alligator-eye-right {
+    right: 25px;
+}
+
+.alligator-pupil {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background-color: black;
+    border-radius: 50%;
+    top: 4px;
+    left: 4px;
+}
+
+.alligator-teeth {
+    position: absolute;
+    width: 80px;
+    height: 10px;
+    top: 35px;
+    left: 20px;
+}
+
+.alligator-tooth {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid white;
+}
+
+.alligator-tooth-1 {
+    left: 10px;
+}
+
+.alligator-tooth-2 {
+    left: 30px;
+}
+
+.alligator-tooth-3 {
+    left: 50px;
+}
+
+.alligator-back {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    width: 150px;
+    height: 10px;
+}
+
+.alligator-spine {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 15px solid #2e7d32;
+    transform: rotate(180deg);
+}
+
+.spine-1 { left: 0; }
+.spine-2 { left: 20px; }
+.spine-3 { left: 40px; }
+.spine-4 { left: 60px; }
+.spine-5 { left: 80px; }
+.spine-6 { left: 100px; }
+.spine-7 { left: 120px; }
+
+.alligator-leg {
+    position: absolute;
+    background-color: #2e7d32;
+    width: 15px;
+    height: 30px;
+    bottom: -25px;
+}
+
+.alligator-leg-front {
+    left: 30px;
+}
+
+.alligator-leg-back {
+    right: 30px;
+}
+
+/* Abstract architecture */
+.abstract-scene {
+    background: linear-gradient(135deg, #b5d6f0 0%, #b5d6f0 33%, #f0e6cd 33%, #f0e6cd 67%, #c1b8d1 67%, #c1b8d1 100%);
+    position: relative;
+}
+
+.abstract-wall-1 {
+    position: absolute;
+    width: 100px;
+    height: 150px;
+    background-color: #92a8d1;
+    bottom: 50px;
+    left: 40px;
+}
+
+.abstract-wall-2 {
+    position: absolute;
+    width: 140px;
+    height: 80px;
+    background-color: #d76c6c;
+    bottom: 50px;
+    right: 40px;
+    transform: skewX(-20deg);
+}
+
+.abstract-line {
+    position: absolute;
+    height: 4px;
+    width: 200px;
+    background-color: #e86464;
+    bottom: 160px;
+    left: 20px;
+    transform: rotate(-5deg);
+}
+
+/* Landscape */
+.landscape-scene {
+    background-color: #c54b4b;
+    position: relative;
+}
+
+.landscape-arch {
+    position: absolute;
+    width: 160px;
+    height: 200px;
+    background-color: #f9d5ba;
+    border-radius: 80px 80px 0 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.landscape-sun {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #ff5733;
+    border-radius: 50%;
+    top: 40px;
+    left: 55px;
+}
+
+.landscape-water {
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    background-color: #4fa1c0;
+    border-radius: 0 0 20px 20px;
+    bottom: 30px;
+    left: 20px;
+}
+
+.landscape-hill {
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    background-color: #2f5d50;
+    border-radius: 50%;
+    bottom: 50px;
+}
+
+.landscape-hill-1 {
+    left: 15px;
+}
+
+.landscape-hill-2 {
+    width: 40px;
+    height: 25px;
+    right: 25px;
+    bottom: 55px;
+}
+
+/* Swimming Pool */
+.pool-scene {
+    background: #fcd1d8;
+    position: relative;
+    overflow: hidden;
+}
+
+.pool-tiles {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    top: 0;
+    background-color: #fcd1d8;
+    background-image: linear-gradient(#ffffff 1px, transparent 1px),
+                   linear-gradient(90deg, #ffffff 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.pool-water {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    bottom: 0;
+    background-color: #66c3d0;
+}
+
+.pool-ladder {
+    position: absolute;
+    top: 15%;
+    right: 25%;
+    height: 70%;
+    width: 40px;
+}
+
+.pool-ladder-rail {
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.pool-ladder-rail-left {
+    left: 0;
+}
+
+.pool-ladder-rail-right {
+    right: 0;
+}
+
+.pool-ladder-step {
+    position: absolute;
+    width: 40px;
+    height: 6px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.pool-ladder-step-1 {
+    top: 20%;
+}
+
+.pool-ladder-step-2 {
+    top: 40%;
+}
+
+.pool-ladder-step-3 {
+    top: 60%;
+}
+
+.pool-ladder-shadow {
+    position: absolute;
+    width: 40px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    bottom: 5%;
+    right: 25%;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
